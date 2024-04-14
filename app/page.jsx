@@ -1,11 +1,11 @@
-'use client';
-import Link from 'next/link';
+import Hero from '@/components/layout/Hero';
+import InfoBoxes from '@/components/layout/InfoBoxes';
 
 function HomePage() {
   return (
     <>
-      <h1 className="text-6xl font-bold">Welcome</h1>
-      <Link href={'/properties'}>Show Properties</Link>
+      <Hero />
+      <InfoBoxes />
     </>
   );
 }
