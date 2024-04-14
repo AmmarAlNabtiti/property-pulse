@@ -1,26 +1,27 @@
 import React from 'react';
 import Logo from '@/public/images/logo.png';
 import Image from 'next/image';
+import Link from 'next/link';
 
 function Footer() {
   return (
-    <footer className="bg-gray-200 py-4 mt-auto">
-      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-4">
+    <footer className="py-4 mt-auto bg-gray-200">
+      <div className="container flex flex-col items-center justify-between px-4 mx-auto md:flex-row">
         <div className="mb-4 md:mb-0">
-          <Image src={Logo} alt="Logo" className="h-8 w-auto" />
+          <Image src={Logo} alt="Logo" className="w-auto h-8" />
         </div>
-        <div className="flex flex-wrap justify-center md:justify-start mb-4 md:mb-0">
+        <div className="flex flex-wrap justify-center mb-4 md:justify-start md:mb-0">
           <ul className="flex space-x-4">
             <li>
-              <a href="/properties.html">Properties</a>
+              <Link href="/properties">Properties</Link>
             </li>
             <li>
-              <a href="/terms.html">Terms of Service</a>
+              <Link href="/terms">Terms of Service</Link>
             </li>
           </ul>
         </div>
         <div>
-          <p className="text-sm text-gray-500 mt-2 md:mt-0">
+          <p className="mt-2 text-sm text-gray-500 md:mt-0">
             &copy; 2024 PropertyPulse. All rights reserved.
           </p>
         </div>
