@@ -1,5 +1,13 @@
-function Home() {
-  return <h1 className="text-6xl font-bold">Main page</h1>;
+'use client';
+import Link from 'next/link';
+
+function HomePage() {
+  return (
+    <>
+      <h1 className="text-6xl font-bold">Welcome</h1>
+      <Link href={'/properties'}>Show Properties</Link>
+    </>
+  );
 }
 
-export default Home;
+export default HomePage;
