@@ -4,7 +4,6 @@ import Link from 'next/link';
 
 function HomeProperty() {
   const recentProperty = properties.slice(0, 3);
-  console.log(recentProperty);
   return (
     <>
       <section className="px-4 py-6">
