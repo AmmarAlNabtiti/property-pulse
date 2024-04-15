@@ -1,6 +1,10 @@
 import PropertyCard from '@/components/utils/PropertyCard';
-import properties from '@/dummyData/properties.json';
-function propertiesPage() {
+import { fetchProperties } from '@/utils/requests';
+
+async function propertiesPage() {
+  const {
+    data: { properties },
+  } = await fetchProperties();
   return (
     <section className="px-4 py-6">
       {!properties && (

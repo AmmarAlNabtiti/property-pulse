@@ -1,8 +1,11 @@
-import properties from '@/dummyData/properties.json';
+import { fetchProperties } from '@/utils/requests';
 import PropertyCard from '../utils/PropertyCard';
 import Link from 'next/link';
 
-function HomeProperty() {
+async function HomeProperty() {
+  const {
+    data: { properties },
+  } = await fetchProperties();
   const recentProperty = properties.slice(0, 3);
   return (
     <>
