@@ -1,18 +1,24 @@
 import mongoose from 'mongoose';
 
-let connect = false;
+let isConnected = false;
 
 const connectDB = async () => {
-  mongoose.set('strictQuery', true);
-  if (connect) {
-    console.log('mongo is already connected');
+  if (isConnected) {
+    console.log('MongoDB is already connected.');
+    return;
   }
+
   try {
-    await mongoose.connect(process.env.MONGO_URL);
-    connect = true;
-    console.log('database connected');
+    await mongoose.connect(process.env.MONGO_URL, {
+      dbName: 'property-pulse-db',
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    isConnected = true;
+    console.log('Database connected successfully.');
   } catch (error) {
-    console.log(error);
+    console.error('Database connection failed:', error);
+    throw new Error('Failed to connect to database');
   }
 };
 

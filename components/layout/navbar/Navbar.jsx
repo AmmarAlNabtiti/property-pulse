@@ -55,6 +55,7 @@ function Navbar() {
                 className="w-auto h-10"
                 src={WhiteLogo}
                 alt="PropertyPulse"
+                priority={true}
               />
 
               <span className="hidden ml-2 text-2xl font-bold text-white md:block">
